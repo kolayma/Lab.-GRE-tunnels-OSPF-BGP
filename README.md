@@ -1,22 +1,22 @@
-# 🌐 Корпоративная сеть: GRE, OSPF и BGP
+# 🌐 Enterprise Network: GRE, OSPF, and BGP
 
-Схема связности центрального и удаленного офисов с резервированием и динамической маршрутизацией.
+Connectivity scheme between central and remote offices with gateway redundancy and dynamic routing.
 <img width="1612" height="648" alt="2026-04-27_22-01-36" src="https://github.com/user-attachments/assets/2a8419b8-a36a-4695-9a3c-35a65fb8045f" />
 
 
-## 🏢 Центральный офис
-- Несколько маршрутизаторов, объединенных в группу резервирования шлюза.
-- Настроен протокол **HSRP** (Hot Standby Router Protocol).
-- Виртуальный IP-адрес шлюза по умолчанию: **`192.168.1.254`**.
-- Каждый маршрутизатор имеет независимый выход в интернет.
+## 🏢 Central Office
+- Multiple routers combined into a gateway redundancy group.
+- **HSRP** (Hot Standby Router Protocol) is configured.
+- Virtual default gateway IP address: **`192.168.1.254`**.
+- Each router has its own independent internet connection.
 
-## 🏭 Удаленный офис
-- Имеет собственный независимый выход в интернет (отдельный провайдер/канал).
+## 🏭 Remote Office
+- Has its own independent internet connection (separate ISP/link).
 
-## 🔗 Связность офисов
-- Офисы объединены в корпоративную сеть через **GRE-туннели** (поверх публичных IP-адресов).
-- Для маршрутизации между офисами внутри туннелей используется протокол динамической маршрутизации **OSPF**.
+## 🔗 Office Interconnectivity
+- Offices are connected into a corporate network via **GRE tunnels** (over public IP addresses).
+- **OSPF** dynamic routing protocol is used for routing between offices inside the tunnels.
 
-## 🌍 Глобальная маршрутизация (BGP)
-- Автономные системы (AS) компании объединены с помощью протокола **BGP**.
-- Используется для обмена маршрутами с внешними сетями (интернет-провайдерами) или между разными AS компании.
+## 🌍 Global Routing (BGP)
+- Autonomous Systems (AS) are interconnected using **BGP**.
+- Used to exchange routes with external networks (ISPs) or between different company AS.
